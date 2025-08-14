@@ -20,6 +20,7 @@
     <header class="header">
       <div class="header-container">
         <div class="logo-title">
+          <button class="menu-toggle" id="menuToggle">☰</button>
           <a
             href="https://codeforsuccess.in"
             style="
@@ -42,10 +43,13 @@
       </div>
     </header>
 
+    <!-- Sidebar Overlay for Mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
     <!-- Main Content -->
     <div class="main-wrapper">
       <!-- Sidebar -->
-      <aside class="sidebar">
+      <aside class="sidebar" id="sidebar">
         <select class="dropdown">
           <option>DSA Sheet</option>
         </select>
@@ -99,7 +103,8 @@
 
       function createParticles() {
         particles = [];
-        for (let i = 0; i < 50; i++) {
+        const particleCount = window.innerWidth < 768 ? 30 : 50; // Fewer particles on mobile
+        for (let i = 0; i < particleCount; i++) {
           particles.push({
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
@@ -113,6 +118,7 @@
       function drawParticles() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = "#2feaaa";
+        ctx.globalAlpha = 0.6;
         particles.forEach((p) => {
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
