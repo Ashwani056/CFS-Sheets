@@ -5,7 +5,8 @@
     "topic": "Array",
     "pattern": "Two Pointers",
     "difficulty": "Easy",
-    "link": "https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array/"
+    "link": "https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array/",
+    "veryImportant": true
   },
   {
     "title": "Find max & min in array",
@@ -29,7 +30,8 @@
     "topic": "Array",
     "pattern": "Sorting & Partitioning",
     "difficulty": "Easy",
-    "link": "https://www.geeksforgeeks.org/move-negative-numbers-beginning-positive-end-constant-extra-space/"
+    "link": "https://www.geeksforgeeks.org/move-negative-numbers-beginning-positive-end-constant-extra-space/",
+    "veryImportant": true
   },
   {
     "title": "Move negatives (order preserved / stable)",
@@ -173,7 +175,8 @@
     "topic": "Array",
     "pattern": "Greedy",
     "difficulty": "Easy",
-    "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"
+    "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+    "veryImportant": true
   },
   {
     "title": "Best Time to Buy and Sell Stock II",
@@ -229,7 +232,8 @@
     "topic": "Array",
     "pattern": "LIS / Patience Sorting",
     "difficulty": "Medium",
-    "link": "https://leetcode.com/problems/longest-increasing-subsequence/"
+    "link": "https://leetcode.com/problems/longest-increasing-subsequence/",
+    "veryImportant": true
   },
   {
     "title": "Number of Longest Increasing Subsequence (path/duplicates)",
@@ -245,7 +249,8 @@
     "topic": "Array",
     "pattern": "Hash Map / Set",
     "difficulty": "Easy",
-    "link": "https://leetcode.com/problems/two-sum/"
+    "link": "https://leetcode.com/problems/two-sum/",
+    "veryImportant": true
   },
   {
     "title": "3Sum",
@@ -253,7 +258,8 @@
     "topic": "Array",
     "pattern": "Two Pointers",
     "difficulty": "Medium",
-    "link": "https://leetcode.com/problems/3sum/"
+    "link": "https://leetcode.com/problems/3sum/",
+    "veryImportant": true
   },
   {
     "title": "Container With Most Water",
@@ -261,7 +267,8 @@
     "topic": "Array",
     "pattern": "Two Pointers",
     "difficulty": "Medium",
-    "link": "https://leetcode.com/problems/container-with-most-water/"
+    "link": "https://leetcode.com/problems/container-with-most-water/",
+    "veryImportant": true
   },
   {
     "title": "Minimum Size Subarray Sum",
@@ -269,7 +276,8 @@
     "topic": "Array",
     "pattern": "Sliding Window",
     "difficulty": "Medium",
-    "link": "https://leetcode.com/problems/minimum-size-subarray-sum/"
+    "link": "https://leetcode.com/problems/minimum-size-subarray-sum/",
+    "veryImportant": true
   },
   {
     "title": "Subarray Sum Equals K",
@@ -277,7 +285,8 @@
     "topic": "Array",
     "pattern": "Prefix Sum",
     "difficulty": "Medium",
-    "link": "https://leetcode.com/problems/subarray-sum-equals-k/"
+    "link": "https://leetcode.com/problems/subarray-sum-equals-k/",
+    "veryImportant": true
   },
   {
     "title": "Product of Array Except Self",
@@ -285,7 +294,8 @@
     "topic": "Array",
     "pattern": "Prefix/Suffix Products",
     "difficulty": "Medium",
-    "link": "https://leetcode.com/problems/product-of-array-except-self/"
+    "link": "https://leetcode.com/problems/product-of-array-except-self/",
+    "veryImportant": true
   },
   {
     "title": "Maximum Subarray",
@@ -293,7 +303,8 @@
     "topic": "Array",
     "pattern": "Kadane / Subarray",
     "difficulty": "Medium",
-    "link": "https://leetcode.com/problems/maximum-subarray/"
+    "link": "https://leetcode.com/problems/maximum-subarray/",
+    "veryImportant": true
   },
   {
     "title": "Find Minimum in Rotated Sorted Array",
@@ -301,7 +312,8 @@
     "topic": "Array",
     "pattern": "Binary Search",
     "difficulty": "Medium",
-    "link": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/"
+    "link": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/",
+    "veryImportant": true
   },
   {
     "title": "Kth Largest Element in an Array",
@@ -309,7 +321,8 @@
     "topic": "Array",
     "pattern": "Order Statistics (Quickselect)",
     "difficulty": "Medium",
-    "link": "https://leetcode.com/problems/kth-largest-element-in-an-array/"
+    "link": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
+    "veryImportant": true
   },
   {
     "title": "Top K Frequent Elements",
@@ -317,7 +330,8 @@
     "topic": "Array",
     "pattern": "Heap / Priority Queue",
     "difficulty": "Medium",
-    "link": "https://leetcode.com/problems/top-k-frequent-elements/"
+    "link": "https://leetcode.com/problems/top-k-frequent-elements/",
+    "veryImportant": true
   },
 
   {
@@ -342,7 +356,8 @@
     "topic": "Array",
     "pattern": "Monotonic Queue",
     "difficulty": "Hard",
-    "link": "https://leetcode.com/problems/sliding-window-maximum/"
+    "link": "https://leetcode.com/problems/sliding-window-maximum/",
+    "veryImportant": true
   },
   {
     "title": "Trapping Rain Water",
@@ -350,7 +365,8 @@
     "topic": "Array",
     "pattern": "Two Pointers",
     "difficulty": "Hard",
-    "link": "https://leetcode.com/problems/trapping-rain-water/"
+    "link": "https://leetcode.com/problems/trapping-rain-water/",
+    "veryImportant": true
   },
   {
     "title": "Maximum Product Subarray",
@@ -358,7 +374,8 @@
     "topic": "Array",
     "pattern": "Kadane / Subarray",
     "difficulty": "Medium",
-    "link": "https://leetcode.com/problems/maximum-product-subarray/"
+    "link": "https://leetcode.com/problems/maximum-product-subarray/",
+    "veryImportant": true
   },
   {
     "title": "Subarray Sums Divisible by K",
@@ -366,7 +383,8 @@
     "topic": "Array",
     "pattern": "Prefix Sum",
     "difficulty": "Medium",
-    "link": "https://leetcode.com/problems/subarray-sums-divisible-by-k/"
+    "link": "https://leetcode.com/problems/subarray-sums-divisible-by-k/",
+    "veryImportant": true
   },
   {
     "title": "Find First and Last Position of Element in Sorted Array",
@@ -374,7 +392,8 @@
     "topic": "Array",
     "pattern": "Binary Search",
     "difficulty": "Medium",
-    "link": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/"
+    "link": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/",
+    "veryImportant": true
   },
   {
     "title": "Split Array Largest Sum",
@@ -407,7 +426,8 @@
     "topic": "Array",
     "pattern": "Two Pointers",
     "difficulty": "Easy",
-    "link": "https://leetcode.com/problems/move-zeroes/"
+    "link": "https://leetcode.com/problems/move-zeroes/",
+    "veryImportant": true
   },
   {
     "title": "Remove Duplicates from Sorted Array",
@@ -447,7 +467,8 @@
     "topic": "Array",
     "pattern": "Monotonic Stack",
     "difficulty": "Hard",
-    "link": "https://leetcode.com/problems/largest-rectangle-in-histogram/"
+    "link": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
+    "veryImportant": true
   },
   {
     "title": "Koko Eating Bananas",
@@ -775,7 +796,8 @@
     "topic": "Array",
     "pattern": "Sorting & Partitioning",
     "difficulty": "Medium",
-    "link": "https://leetcode.com/problems/next-permutation/"
+    "link": "https://leetcode.com/problems/next-permutation/",
+    "veryImportant": true
   },
   {
     "title": "Rotate Array",
@@ -1535,7 +1557,8 @@
     "topic": "2D Array",
     "pattern": "Matrix Manipulation",
     "difficulty": "Medium",
-    "link": "https://leetcode.com/problems/rotate-image/"
+    "link": "https://leetcode.com/problems/rotate-image/",
+    "veryImportant": true
   },
   {
     "title": "Search a 2D Matrix",
@@ -3483,3 +3506,5 @@
     "link": "https://leetcode.com/problems/stream-of-characters/"
   }
 ]
+
+

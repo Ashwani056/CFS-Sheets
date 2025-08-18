@@ -333,19 +333,7 @@ body {
   border: none;
 }
 
-.important-filter {
-  margin-left: auto;
-  border: 1px solid #8b5cf6 !important;
-  background-color: rgba(76, 29, 149, 0.2) !important;
-  color: #ddd6fe !important;
-}
 
-.important-filter.active {
-  background-color: #4c1d95 !important;
-  color: #ddd6fe !important;
-  border: 1px solid #8b5cf6 !important;
-  box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
-}
 
 .questions-grid {
   display: grid;
@@ -478,10 +466,32 @@ body {
   align-self: flex-end;
   padding: 0.25rem 0.6rem;
   font-size: 0.75rem;
-  border-radius: 0.4rem;
-  background-color: #232b3b;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   color: #ccc;
+  background-color: #232b3b;
+  border-radius: 0.4rem;
   margin-top: auto;
+}
+
+.important-label {
+  color: #a78bfa;
+  font-weight: 600;
+  animation: glow-text 1.5s ease-in-out infinite alternate;
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.3rem;
+  background-color: rgba(139, 92, 246, 0.2);
+  border: 1px solid #6d28d9;
+}
+
+@keyframes glow-text {
+  from {
+    text-shadow: 0 0 2px rgba(139, 92, 246, 0.3);
+  }
+  to {
+    text-shadow: 0 0 5px rgba(139, 92, 246, 0.8);
+  }
 }
 
 /* Background Canvas */

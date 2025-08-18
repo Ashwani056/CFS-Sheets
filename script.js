@@ -123,7 +123,6 @@ let selectedPattern = "All Patterns";
 let selectedDifficulty = "All";
 let doneMap = JSON.parse(localStorage.getItem("practiceDoneMap") || "{}");
 let searchTerm = "";
-let showOnlyImportant = false;
 
 // ====== DOM Elements ======
 const topicsList = document.getElementById("topicsList");
@@ -211,7 +210,6 @@ function renderQuestions() {
           .toLowerCase()
           .includes(searchTerm)
     )
-    .filter((q) => !showOnlyImportant || q.veryImportant)
     .forEach((q) => {
       const card = document.createElement("div");
       card.className = "question-card";
@@ -238,7 +236,7 @@ function renderQuestions() {
 
 <div class="pattern-bottom">
   ${q.pattern || "General"} 
-  ${q.veryImportant ? '<span class="important-label">★ Important</span>' : ''}
+  ${q.veryImportant ? '<span class="important-label">★ Important</span>' : ""}
 </div>
 
 `;
@@ -269,15 +267,6 @@ searchInput.addEventListener("input", (e) => {
   searchTerm = e.target.value.toLowerCase();
   renderQuestions();
 });
-
-// ====== Important Filter ======
-document
-  .getElementById("importantFilter")
-  .addEventListener("click", function () {
-    showOnlyImportant = !showOnlyImportant;
-    this.classList.toggle("active");
-    renderQuestions();
-  });
 
 // ====== Init ======
 fetch("practiceQuestions.json")
