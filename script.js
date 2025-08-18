@@ -19,6 +19,12 @@ const TOPIC_PATTERN_MAP = {
     "Bit Manipulation",
     "Two Heaps (Median maintenance)",
     "Difference Array",
+    "Merge Sort",
+    "Boyer–Moore Voting (Majority)",
+    "Range Queries (Segment Tree)",
+    "LIS / Patience Sorting",
+    "Fast & Slow Pointers",
+    "Fenwick Tree (BIT)",
   ],
   "2D Array": [
     "Matrix Manipulation",
@@ -27,6 +33,12 @@ const TOPIC_PATTERN_MAP = {
     "Sorting & Partitioning",
     "Greedy",
     "Monotonic Stack",
+    "DFS",
+    "BFS",
+    "Dynamic Programming",
+    "Backtracking",
+    "Trie / Prefix Tree",
+    "Hash Map / Set",
   ],
   Strings: [
     "Sliding Window",
@@ -86,6 +98,8 @@ const TOPIC_PATTERN_MAP = {
     "Bitmask DP",
     "DP on Intervals",
     "DP on Trees",
+    "Dynamic Programming",
+    "DP on Strings",
   ],
   "Greedy Algorithms": [
     "Greedy",
@@ -109,6 +123,7 @@ let selectedPattern = "All Patterns";
 let selectedDifficulty = "All";
 let doneMap = JSON.parse(localStorage.getItem("practiceDoneMap") || "{}");
 let searchTerm = "";
+let showOnlyImportant = false;
 
 // ====== DOM Elements ======
 const topicsList = document.getElementById("topicsList");
@@ -196,6 +211,7 @@ function renderQuestions() {
           .toLowerCase()
           .includes(searchTerm)
     )
+    .filter((q) => !showOnlyImportant || q.veryImportant)
     .forEach((q) => {
       const card = document.createElement("div");
       card.className = "question-card";
@@ -220,7 +236,10 @@ function renderQuestions() {
   <a href="${q.link}" target="_blank" class="link-btn">Open ↗</a>
 </div>
 
-<div class="pattern-bottom">${q.pattern || "General"}</div>
+<div class="pattern-bottom">
+  ${q.pattern || "General"} 
+  ${q.veryImportant ? '<span class="important-label">★ Important</span>' : ''}
+</div>
 
 `;
 
@@ -251,6 +270,15 @@ searchInput.addEventListener("input", (e) => {
   renderQuestions();
 });
 
+// ====== Important Filter ======
+document
+  .getElementById("importantFilter")
+  .addEventListener("click", function () {
+    showOnlyImportant = !showOnlyImportant;
+    this.classList.toggle("active");
+    renderQuestions();
+  });
+
 // ====== Init ======
 fetch("practiceQuestions.json")
   .then((res) => res.json())
@@ -263,3 +291,85 @@ fetch("practiceQuestions.json")
   .catch((err) => {
     console.error("Failed to load questions:", err);
   });
+
+// ====== Mobile Sidebar Toggle ======
+const menuToggleBtn = document.querySelector(".menu-toggle");
+const sidebar = document.querySelector(".sidebar");
+const sidebarOverlay = document.querySelector(".sidebar-overlay");
+
+// Function to close the mobile sidebar
+function closeMobileSidebar() {
+  sidebar.classList.remove("mobile-visible");
+  sidebarOverlay.classList.remove("active");
+  document.body.classList.remove("sidebar-open");
+  // Re-enable scrolling by removing fixed positioning
+  document.body.style.position = "";
+  document.body.style.top = "";
+  document.body.style.width = "";
+  document.body.style.height = "";
+  window.scrollTo(0, parseInt(scrollY || "0"));
+}
+
+// Function to toggle the mobile sidebar
+function toggleMobileSidebar() {
+  const isVisible = sidebar.classList.contains("mobile-visible");
+
+  if (isVisible) {
+    closeMobileSidebar();
+  } else {
+    sidebar.classList.add("mobile-visible");
+    sidebarOverlay.classList.add("active");
+    document.body.classList.add("sidebar-open");
+
+    // Fix for iOS scroll issue - add touch events
+    sidebar.style.WebkitOverflowScrolling = "touch";
+    sidebar.style.overflowY = "auto";
+
+    // Force repaint to enable scrolling
+    setTimeout(() => {
+      sidebar.style.display = "none";
+      sidebar.offsetHeight; // Force reflow
+      sidebar.style.display = "flex";
+      sidebar.style.flexDirection = "column";
+
+      const topicsList = document.getElementById("topicsList");
+      if (topicsList) {
+        topicsList.style.overflow = "visible";
+      }
+    }, 50);
+  }
+}
+
+// Track scroll position to restore it when closing the sidebar
+window.addEventListener("scroll", () => {
+  document.documentElement.style.setProperty(
+    "--scroll-y",
+    `${window.scrollY}px`
+  );
+});
+
+if (menuToggleBtn && sidebar && sidebarOverlay) {
+  // Toggle sidebar when menu button is clicked
+  menuToggleBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    toggleMobileSidebar();
+  });
+
+  // Close sidebar when overlay is clicked
+  sidebarOverlay.addEventListener("click", closeMobileSidebar);
+
+  // Close sidebar when a topic or pattern is clicked (on mobile only)
+  document.addEventListener("click", (e) => {
+    const isMobile = window.innerWidth <= 768;
+
+    if (isMobile && sidebar.classList.contains("mobile-visible")) {
+      // Check if clicked on a topic or pattern item
+      if (
+        e.target.closest(".topic-item") ||
+        e.target.closest(".pattern-item")
+      ) {
+        closeMobileSidebar();
+      }
+    }
+  });
+}

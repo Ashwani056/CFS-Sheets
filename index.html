@@ -50,23 +50,27 @@
     <div class="main-wrapper">
       <!-- Sidebar -->
       <aside class="sidebar" id="sidebar">
-        <select class="dropdown">
-          <option>DSA Sheet</option>
-        </select>
+        <div class="sidebar-header">
+          <select class="dropdown">
+            <option>DSA Sheet</option>
+          </select>
 
-        <input
-          type="text"
-          id="searchInput"
-          placeholder="Search by title, topic..."
-          class="search-input"
-        />
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search by title, topic..."
+            class="search-input"
+          />
+        </div>
 
-        <h2 class="section-title">Topics</h2>
-        <ul id="topicsList" class="topics-list"></ul>
+        <div class="sidebar-scrollable-content">
+          <h2 class="section-title">Topics</h2>
+          <ul id="topicsList" class="topics-list"></ul>
 
-        <div class="patterns-section">
-          <h2 class="section-title">Select Pattern</h2>
-          <ul id="patternsList" class="patterns-list"></ul>
+          <div class="patterns-section">
+            <h2 class="section-title">Select Pattern</h2>
+            <ul id="patternsList" class="patterns-list"></ul>
+          </div>
         </div>
       </aside>
 
@@ -82,6 +86,9 @@
             Medium
           </button>
           <button class="difficulty-btn" data-difficulty="Hard">Hard</button>
+          <button class="difficulty-btn important-filter" id="importantFilter">
+            ★ Important Only
+          </button>
         </div>
 
         <!-- Questions Grid -->
