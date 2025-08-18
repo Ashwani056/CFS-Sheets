@@ -580,7 +580,8 @@
     "topic": "Array",
     "pattern": "Boyer–Moore Voting (Majority)",
     "difficulty": "Easy",
-    "link": "https://leetcode.com/problems/majority-element/"
+    "link": "https://leetcode.com/problems/majority-element/",
+    "veryImportant": true
   },
   {
     "title": "Binary Subarrays With Sum",
